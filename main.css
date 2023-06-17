@@ -3,9 +3,17 @@
     margin: 25px;
 }
 
-.instance {
+.statusOk {
     color: white;
     background-color: green;
     border-radius: 5px;
     padding: 2px 5px 2px 5px;
+}
+
+.statusErr {
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    padding: 2px 5px 2px 5px;
+
 }
