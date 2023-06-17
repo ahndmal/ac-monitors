@@ -6,14 +6,12 @@ const root = document.querySelector(".root");
 fetch(url)
   .then((res) => res.json())
   .then((resp) => {
-    const jiraProd = resp[0]["jiraProd"];
-    const jiraStage = resp[1]["jiraStage"];
-    const conflStage = resp[2]["confProd"];
-    const arr = [jiraProd, jiraStage, conflStage];
-    
-    for (let instance of arr) {
+    for (let instance of JSON.parse(resp)) {
+      const insName = Object.getOwnPropertyNames(instance);
       const state = instance === 'RUNNING' 
-        ? `<p style="color: green">${instance}</p>`
+        ? `<p style="color: green">
+            <span>${insName}</span>
+            ${instance["${insName}"]}</p>`
         : `<p style="color: yellow">${instance}</p>`;
       const statusDiv = document.createElement("div");
       statusDiv.innerHTML = `<div>
