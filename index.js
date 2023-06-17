@@ -1,11 +1,13 @@
 
 const url = "https://us-east1-ac-monitors.cloudfunctions.net/ac-monitors-2"
-
 const root = document.querySelector(".root");
 
 fetch(url)
   .then((res) => res.json())
   .then((resp) => {
+    
+    console.log(resp);
+
     const arr = JSON.parse(resp);
     
     console.log(arr);
