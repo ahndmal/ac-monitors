@@ -7,8 +7,8 @@ fetch(url)
   .then((res) => res.json())
   .then((resp) => {
     const jiraProd = resp[0]["jiraProd"];
-    const jiraStage = resp[0]["jiraStage"];
-    const conflStage = resp[0]["confProd"];
+    const jiraStage = resp[1]["jiraStage"];
+    const conflStage = resp[2]["confProd"];
     const arr = [jiraProd, jiraStage, conflStage];
     for (let instance of arr) {
       const statusDiv = document.createElement("div");
