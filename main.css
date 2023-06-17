@@ -1,0 +1,11 @@
+.root {
+    padding: 25px;
+    margin: 25px;
+}
+
+.instance {
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+}
