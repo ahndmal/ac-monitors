@@ -8,15 +8,17 @@ fetch(url)
     for (let instance of resp) {
       const insName = Object.getOwnPropertyNames(instance)[0];
       const stateName = instance[insName];
-      const state = stateName === 'RUNNING' 
-        ? `<p style="color: green">
-            <span>${insName}</span>
-            ${stateName}</p>`
-        : `<p style="color: yellow">${instance}</p>`;
+      const htmlData = `<p>
+        <span>${insName}</span>
+        ${stateName}</p>`
+
       const statusDiv = document.createElement("div");
-      statusDiv.innerHTML = `<div>
-          ${state}
-        </div>`;
+      
+      stateName === 'RUNNING' 
+        ? statusDiv.style = "color: green"
+        : statusDiv.style = "color: yellow";
+
+      statusDiv.innerHTML = `<div>${stateName}</div>`;
       root.appendChild(statusDiv);
     }
     
