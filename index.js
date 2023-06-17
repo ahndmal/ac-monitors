@@ -16,8 +16,9 @@ fetch(url)
 
       statusDiv.innerHTML = `<div class="instance">
           <p>
-            <span>${insName}&nbsp</span>
-            ${stateName}</p>
+            ${insName}&nbsp
+            <span>${stateName}<span>
+          </p>
         </div>`;
 
       let stateSpan = statusDiv.querySelector("span");
