@@ -25,7 +25,10 @@ fetch(url)
 
       stateName === 'RUNNING' 
         ? stateSpan.style = "color: green"
-        : stateSpan.style = "color: yellow";
+        : stateSpan.style = "color: white;
+            background-color: green;
+            border-radius: 5px;
+            padding: 2px 5px 2px 5px;";
 
       root.appendChild(statusDiv);
     }
