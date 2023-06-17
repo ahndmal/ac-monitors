@@ -13,12 +13,19 @@ fetch(url)
         ${stateName}</p>`
 
       const statusDiv = document.createElement("div");
-      
-      stateName === 'RUNNING' 
-        ? statusDiv.style = "color: green"
-        : statusDiv.style = "color: yellow";
 
-      statusDiv.innerHTML = `<div>${stateName}</div>`;
+      statusDiv.innerHTML = `<div class="instance">
+          <p>
+            <span>${insName}&nbsp</span>
+            ${stateName}</p>
+        </div>`;
+
+      let stateSpan = statusDiv.querySelector("span");
+
+      stateName === 'RUNNING' 
+        ? stateSpan.style = "color: green"
+        : stateSpan.style = "color: yellow";
+
       root.appendChild(statusDiv);
     }
     
