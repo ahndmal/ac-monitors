@@ -7,11 +7,11 @@ fetch(url)
   .then((res) => res.json())
   .then((resp) => {
     for (let instance of JSON.parse(resp)) {
-      const insName = Object.getOwnPropertyNames(instance);
-      const state = instance === 'RUNNING' 
+      const insName = Object.getOwnPropertyNames(instance)[0];
+      const state = instance[insName] === 'RUNNING' 
         ? `<p style="color: green">
             <span>${insName}</span>
-            ${instance["${insName}"]}</p>`
+            ${instance[insName]}</p>`
         : `<p style="color: yellow">${instance}</p>`;
       const statusDiv = document.createElement("div");
       statusDiv.innerHTML = `<div>
