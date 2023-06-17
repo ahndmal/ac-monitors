@@ -6,11 +6,9 @@ const root = document.querySelector(".root");
 fetch(url)
   .then((res) => res.json())
   .then((resp) => {
-    const arr = resp;
-
-    const jiraProd = arr[0]["jiraProd"];
-    const jiraStage = arr[0]["jiraStage"];
-    const conflStage = arr[0]["confProd"];
+    const jiraProd = resp[0]["jiraProd"];
+    const jiraStage = resp[0]["jiraStage"];
+    const conflStage = resp[0]["confProd"];
     const arr = [jiraProd, jiraStage, conflStage];
     for (let instance of arr) {
       const statusDiv = document.createElement("div");
