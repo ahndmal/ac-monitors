@@ -6,15 +6,16 @@ const root = document.querySelector(".root");
 fetch(url)
   .then((res) => res.json())
   .then((resp) => {
-    const data = resp;
-    const jiraProd = data["https://jira.ontrq.com/status"];
-    const jiraStage = data["https://jira-stage.ontrq.com/status"];
-    const conflStage = data["https://confluence.ontrq.com/status"];
+    const arr = resp;
+
+    const jiraProd = arr[0]["jiraProd"];
+    const jiraStage = arr[0]["jiraStage"];
+    const conflStage = arr[0]["confProd"];
     const arr = [jiraProd, jiraStage, conflStage];
     for (let instance of arr) {
       const statusDiv = document.createElement("div");
       statusDiv.innerHTML = `<div>
-          <p>${instance.state}</p>
+          <p>${instance}</p>
         </div>`;
       root.appendChild(statusDiv);
     }
