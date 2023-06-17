@@ -5,14 +5,7 @@ const root = document.querySelector(".root");
 fetch(url)
   .then((res) => res.json())
   .then((resp) => {
-    
-    console.log(resp);
-
-    const arr = JSON.parse(resp);
-    
-    console.log(arr);
-
-    for (let instance of arr) {
+    for (let instance of resp) {
       const insName = Object.getOwnPropertyNames(instance)[0];
       const stateName = instance[insName];
       const state = stateName === 'RUNNING' 
